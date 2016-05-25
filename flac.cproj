@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4443488-BC8C-422A-9EAC-5285E18A1E40}</ProjectGuid>
+    <Compiler>
+      <Compiler ctype="GccCompiler" />
+    </Compiler>
+    <Language>C</Language>
+    <Target>Bin</Target>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\flac_debug</OutputPath>
+    <OutputName>flac_debug</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <DefineSymbols>FLAC__NO_DLL HAVE_CONFIG_H _DEBUG DEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/flac/include
+		-I../../audiocodecs/flac/src/libFLAC/include
+		-I../../audiocodecs/flac_config/linux
+		-I../../audiocodecs/libogg/include
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\build\flac_release</OutputPath>
+    <OutputName>flac_release</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <OptimizationLevel>3</OptimizationLevel>
+    <DefineSymbols>FLAC__NO_DLL HAVE_CONFIG_H NDEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/flac/include
+		-I../../audiocodecs/flac/src/libFLAC/include
+		-I../../audiocodecs/flac_config/linux
+		-I../../audiocodecs/libogg/include
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="flac\src\libFLAC\bitmath.c" />
+    <Compile Include="flac\src\libFLAC\bitreader.c" />
+    <Compile Include="flac\src\libFLAC\bitwriter.c" />
+    <Compile Include="flac\src\libFLAC\cpu.c" />
+    <Compile Include="flac\src\libFLAC\crc.c" />
+    <Compile Include="flac\src\libFLAC\fixed.c" />
+    <Compile Include="flac\src\libFLAC\fixed_intrin_sse2.c" />
+    <Compile Include="flac\src\libFLAC\fixed_intrin_ssse3.c" />
+    <Compile Include="flac\src\libFLAC\float.c" />
+    <Compile Include="flac\src\libFLAC\format.c" />
+    <Compile Include="flac\src\libFLAC\lpc.c" />
+    <Compile Include="flac\src\libFLAC\lpc_intrin_avx2.c" />
+    <Compile Include="flac\src\libFLAC\lpc_intrin_sse.c" />
+    <Compile Include="flac\src\libFLAC\lpc_intrin_sse2.c" />
+    <Compile Include="flac\src\libFLAC\lpc_intrin_sse41.c" />
+    <Compile Include="flac\src\libFLAC\md5.c" />
+    <Compile Include="flac\src\libFLAC\memory.c" />
+    <Compile Include="flac\src\libFLAC\metadata_iterators.c" />
+    <Compile Include="flac\src\libFLAC\metadata_object.c" />
+    <Compile Include="flac\src\libFLAC\ogg_decoder_aspect.c" />
+    <Compile Include="flac\src\libFLAC\ogg_encoder_aspect.c" />
+    <Compile Include="flac\src\libFLAC\ogg_helper.c" />
+    <Compile Include="flac\src\libFLAC\ogg_mapping.c" />
+    <Compile Include="flac\src\libFLAC\stream_decoder.c" />
+    <Compile Include="flac\src\libFLAC\stream_encoder.c" />
+    <Compile Include="flac\src\libFLAC\stream_encoder_framing.c" />
+    <Compile Include="flac\src\libFLAC\stream_encoder_intrin_avx2.c" />
+    <Compile Include="flac\src\libFLAC\stream_encoder_intrin_sse2.c" />
+    <Compile Include="flac\src\libFLAC\stream_encoder_intrin_ssse3.c" />
+    <Compile Include="flac\src\libFLAC\window.c" />
+  </ItemGroup>
+</Project>

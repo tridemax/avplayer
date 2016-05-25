@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4443488-BC8C-422A-9EAC-5285E18A1E41}</ProjectGuid>
+    <Compiler>
+      <Compiler ctype="GccCompiler" />
+    </Compiler>
+    <Language>C</Language>
+    <Target>Bin</Target>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\lame_debug</OutputPath>
+    <OutputName>lame_debug</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <DefineSymbols>HAVE_CONFIG_H _DEBUG DEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/lame
+		-I../../audiocodecs/lame/include
+		-I../../audiocodecs/lame/libmp3lame
+		-I../../audiocodecs/lame_config/linux
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\build\lame_release</OutputPath>
+    <OutputName>lame_release</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <OptimizationLevel>3</OptimizationLevel>
+    <DefineSymbols>HAVE_CONFIG_H NDEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/lame
+		-I../../audiocodecs/lame/include
+		-I../../audiocodecs/lame/libmp3lame
+		-I../../audiocodecs/lame_config/linux
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="lame\libmp3lame\vector\xmm_quantize_sub.c" />
+    <Compile Include="lame\libmp3lame\bitstream.c" />
+    <Compile Include="lame\libmp3lame\encoder.c" />
+    <Compile Include="lame\libmp3lame\fft.c" />
+    <Compile Include="lame\libmp3lame\gain_analysis.c" />
+    <Compile Include="lame\libmp3lame\id3tag.c" />
+    <Compile Include="lame\libmp3lame\lame.c" />
+    <Compile Include="lame\libmp3lame\newmdct.c" />
+    <Compile Include="lame\libmp3lame\presets.c" />
+    <Compile Include="lame\libmp3lame\psymodel.c" />
+    <Compile Include="lame\libmp3lame\quantize.c" />
+    <Compile Include="lame\libmp3lame\quantize_pvt.c" />
+    <Compile Include="lame\libmp3lame\reservoir.c" />
+    <Compile Include="lame\libmp3lame\set_get.c" />
+    <Compile Include="lame\libmp3lame\tables.c" />
+    <Compile Include="lame\libmp3lame\takehiro.c" />
+    <Compile Include="lame\libmp3lame\util.c" />
+    <Compile Include="lame\libmp3lame\vbrquantize.c" />
+    <Compile Include="lame\libmp3lame\VbrTag.c" />
+    <Compile Include="lame\libmp3lame\version.c" />
+  </ItemGroup>
+</Project>

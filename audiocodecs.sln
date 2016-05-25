@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2857B73E-F847-4B02-9238-064979017E93}") = "flac", "flac.cproj", "{F4443488-BC8C-422A-9EAC-5285E18A1E40}"
+EndProject
+Project("{2857B73E-F847-4B02-9238-064979017E93}") = "lame", "lame.cproj", "{F4443488-BC8C-422A-9EAC-5285E18A1E41}"
+EndProject
+Project("{2857B73E-F847-4B02-9238-064979017E93}") = "mpg123", "mpg123.cproj", "{F4443488-BC8C-422A-9EAC-5285E18A1E42}"
+EndProject
+Project("{2857B73E-F847-4B02-9238-064979017E93}") = "ogg", "ogg.cproj", "{F4443488-BC8C-422A-9EAC-5285E18A1E43}"
+EndProject
+Project("{2857B73E-F847-4B02-9238-064979017E93}") = "vorbis", "vorbis.cproj", "{F4443488-BC8C-422A-9EAC-5285E18A1E44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4443488-BC8C-422A-9EAC-5285E18A1E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4443488-BC8C-422A-9EAC-5285E18A1E44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

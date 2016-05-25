@@ -1,0 +1,5 @@
+Name: mpg123
+Description: 
+Version: 0.1
+Libs: -L"/home/danek/Repos/build/mpg123_release" -lmpg123_release
+Cflags: -I""

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4443488-BC8C-422A-9EAC-5285E18A1E43}</ProjectGuid>
+    <Compiler>
+      <Compiler ctype="GccCompiler" />
+    </Compiler>
+    <Language>C</Language>
+    <Target>Bin</Target>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\ogg_debug</OutputPath>
+    <OutputName>ogg_debug</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <DefineSymbols>HAVE_CONFIG_H _DEBUG DEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/libogg/include
+		-I../../audiocodecs/libogg_config/linux
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\build\ogg_release</OutputPath>
+    <OutputName>ogg_release</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <OptimizationLevel>3</OptimizationLevel>
+    <DefineSymbols>HAVE_CONFIG_H NDEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/libogg/include
+		-I../../audiocodecs/libogg_config/linux
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="libogg\src\bitwise.c" />
+    <Compile Include="libogg\src\framing.c" />
+  </ItemGroup>
+</Project>

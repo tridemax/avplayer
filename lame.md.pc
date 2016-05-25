@@ -1,0 +1,5 @@
+Name: lame
+Description: 
+Version: 0.1
+Libs: -L"/home/danek/Repos/build/lame_release" -llame_release
+Cflags: -I""

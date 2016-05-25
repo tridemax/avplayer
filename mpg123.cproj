@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4443488-BC8C-422A-9EAC-5285E18A1E42}</ProjectGuid>
+    <Compiler>
+      <Compiler ctype="GccCompiler" />
+    </Compiler>
+    <Language>C</Language>
+    <Target>Bin</Target>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\mpg123_debug</OutputPath>
+    <OutputName>mpg123_debug</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <DefineSymbols>OPT_GENERIC HAVE_CONFIG_H _DEBUG DEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/mpg123/src
+		-I../../audiocodecs/mpg123/src/compat
+		-I../../audiocodecs/mpg123/src/libmpg123
+		-I../../audiocodecs/mpg123_config/linux
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\build\mpg123_release</OutputPath>
+    <OutputName>mpg123_release</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <OptimizationLevel>3</OptimizationLevel>
+    <DefineSymbols>OPT_GENERIC HAVE_CONFIG_H NDEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/mpg123/src
+		-I../../audiocodecs/mpg123/src/compat
+		-I../../audiocodecs/mpg123/src/libmpg123
+		-I../../audiocodecs/mpg123_config/linux
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="mpg123\src\libmpg123\compat.c" />
+    <Compile Include="mpg123\src\libmpg123\dct64.c" />
+    <Compile Include="mpg123\src\libmpg123\dither.c" />
+    <Compile Include="mpg123\src\libmpg123\equalizer.c" />
+    <Compile Include="mpg123\src\libmpg123\feature.c" />
+    <Compile Include="mpg123\src\libmpg123\format.c" />
+    <Compile Include="mpg123\src\libmpg123\frame.c" />
+    <Compile Include="mpg123\src\libmpg123\icy.c" />
+    <Compile Include="mpg123\src\libmpg123\icy2utf8.c" />
+    <Compile Include="mpg123\src\libmpg123\id3.c" />
+    <Compile Include="mpg123\src\libmpg123\index.c" />
+    <Compile Include="mpg123\src\libmpg123\layer1.c" />
+    <Compile Include="mpg123\src\libmpg123\layer2.c" />
+    <Compile Include="mpg123\src\libmpg123\layer3.c" />
+    <Compile Include="mpg123\src\libmpg123\libmpg123.c" />
+    <Compile Include="mpg123\src\libmpg123\ntom.c" />
+    <Compile Include="mpg123\src\libmpg123\optimize.c" />
+    <Compile Include="mpg123\src\libmpg123\parse.c" />
+    <Compile Include="mpg123\src\libmpg123\readers.c" />
+    <Compile Include="mpg123\src\libmpg123\stringbuf.c" />
+    <Compile Include="mpg123\src\libmpg123\synth.c" />
+    <Compile Include="mpg123\src\libmpg123\synth_real.c" />
+    <Compile Include="mpg123\src\libmpg123\synth_s32.c" />
+    <Compile Include="mpg123\src\libmpg123\tabinit.c" />
+    <Compile Include="mpg123\src\libmpg123\synth_8bit.c" />
+  </ItemGroup>
+</Project>

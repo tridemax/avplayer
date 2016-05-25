@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4443488-BC8C-422A-9EAC-5285E18A1E44}</ProjectGuid>
+    <Compiler>
+      <Compiler ctype="GccCompiler" />
+    </Compiler>
+    <Language>C</Language>
+    <Target>Bin</Target>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\vorbis_debug</OutputPath>
+    <OutputName>vorbis_debug</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <DefineSymbols>HAVE_CONFIG_H _DEBUG DEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/libvorbis/include
+		-I../../audiocodecs/libvorbis/lib
+		-I../../audiocodecs/libvorbis_config/linux
+		-I../../audiocodecs/libogg/include
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\build\vorbis_release</OutputPath>
+    <OutputName>vorbis_release</OutputName>
+    <CompileTarget>StaticLibrary</CompileTarget>
+    <OptimizationLevel>3</OptimizationLevel>
+    <DefineSymbols>HAVE_CONFIG_H NDEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <ExtraCompilerArguments>
+		-std=gnu11
+		-m64
+		-msse -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -mavx -mf16c
+		-fpic
+		-fdata-sections
+		-ffunction-sections
+		-I../../audiocodecs/libvorbis/include
+		-I../../audiocodecs/libvorbis/lib
+		-I../../audiocodecs/libvorbis_config/linux
+		-I../../audiocodecs/libogg/include
+	</ExtraCompilerArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="libvorbis\lib\analysis.c" />
+    <Compile Include="libvorbis\lib\bitrate.c" />
+    <Compile Include="libvorbis\lib\block.c" />
+    <Compile Include="libvorbis\lib\codebook.c" />
+    <Compile Include="libvorbis\lib\envelope.c" />
+    <Compile Include="libvorbis\lib\floor0.c" />
+    <Compile Include="libvorbis\lib\floor1.c" />
+    <Compile Include="libvorbis\lib\info.c" />
+    <Compile Include="libvorbis\lib\lookup.c" />
+    <Compile Include="libvorbis\lib\lpc.c" />
+    <Compile Include="libvorbis\lib\lsp.c" />
+    <Compile Include="libvorbis\lib\mapping0.c" />
+    <Compile Include="libvorbis\lib\mdct.c" />
+    <Compile Include="libvorbis\lib\psy.c" />
+    <Compile Include="libvorbis\lib\registry.c" />
+    <Compile Include="libvorbis\lib\res0.c" />
+    <Compile Include="libvorbis\lib\sharedbook.c" />
+    <Compile Include="libvorbis\lib\smallft.c" />
+    <Compile Include="libvorbis\lib\synthesis.c" />
+    <Compile Include="libvorbis\lib\tone.c" />
+    <Compile Include="libvorbis\lib\vorbisenc.c" />
+    <Compile Include="libvorbis\lib\vorbisfile.c" />
+    <Compile Include="libvorbis\lib\window.c" />
+  </ItemGroup>
+</Project>

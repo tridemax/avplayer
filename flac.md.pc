@@ -1,0 +1,5 @@
+Name: flac
+Description: 
+Version: 0.1
+Libs: -L"/home/danek/Repos/build/flac_release" -lflac_release
+Cflags: -I""
