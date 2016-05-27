@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
     <ProjectGuid>{F4443488-BC8C-422A-9EAC-5285E18A1E44}</ProjectGuid>
     <Compiler>
       <Compiler ctype="GccCompiler" />
@@ -10,10 +10,11 @@
     <Language>C</Language>
     <Target>Bin</Target>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\build\vorbis_debug</OutputPath>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <OutputPath>..\.build\vorbis_debug</OutputPath>
     <OutputName>vorbis_debug</OutputName>
+    <IntermediateOutputPath>..\.build\vorbis_debug</IntermediateOutputPath>
+    <DebugSymbols>true</DebugSymbols>
     <CompileTarget>StaticLibrary</CompileTarget>
     <DefineSymbols>HAVE_CONFIG_H _DEBUG DEBUG MONODEVELOP</DefineSymbols>
     <SourceDirectory>.</SourceDirectory>
@@ -30,9 +31,10 @@
 		-I../../audiocodecs/libogg/include
 	</ExtraCompilerArguments>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\build\vorbis_release</OutputPath>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\.build\vorbis_release</OutputPath>
     <OutputName>vorbis_release</OutputName>
+    <IntermediateOutputPath>..\.build\vorbis_release</IntermediateOutputPath>
     <CompileTarget>StaticLibrary</CompileTarget>
     <OptimizationLevel>3</OptimizationLevel>
     <DefineSymbols>HAVE_CONFIG_H NDEBUG MONODEVELOP</DefineSymbols>
