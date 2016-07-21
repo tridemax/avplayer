@@ -1,5 +1,0 @@
-Name: vorbis
-Description: 
-Version: 0.1
-Libs: -L"/home/danek/Repos/.build/vorbis_release" -lvorbis_release
-Cflags: -I""
